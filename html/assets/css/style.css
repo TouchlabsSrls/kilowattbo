@@ -2190,6 +2190,23 @@ address {
   letter-spacing: -0.02em;
 }
 
+.parallax-band__heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  line-height: 1.15;
+}
+
+.parallax-band__text {
+  margin: 0;
+  max-width: 38rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .parallax-band__stats {
   display: flex;
   flex-wrap: wrap;

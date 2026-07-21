@@ -73,22 +73,23 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="storia-title">
-      <div class="container">
-        <div class="prose">
-          <h2 id="storia-title">La nostra storia</h2>
-          <p>
-            Fondata nel 2004, Kilowatt nasce come realtà specializzata nel montaggio e nella gestione
-            tecnica di impianti fotovoltaici industriali. In oltre vent'anni di attività abbiamo
-            affinato processi operativi, standard di sicurezza e competenze specifiche per il settore B2B.
-          </p>
-          <p>
-            Offriamo soluzioni chiavi in mano con manodopera altamente qualificata per garantire la
-            massima efficienza energetica in Italia ed Europa. Oggi operiamo come partner di produttori,
-            venditori e aziende finali con un supporto completo: installazione, manutenzione programmata,
-            revamping e certificazione.
-          </p>
-        </div>
+    <section class="parallax-band" aria-labelledby="storia-title">
+      <div
+        class="parallax-band__media"
+        data-parallax-bg="0.55"
+        style="background-image: url('assets/img/chi-siamo/storia-impianto-aereo.jpg')"
+        role="img"
+        aria-label="Impianto fotovoltaico su copertura visto dall'alto"
+      ></div>
+      <div class="parallax-band__scrim" aria-hidden="true"></div>
+      <div class="container parallax-band__content section--reveal">
+        <p class="parallax-band__eyebrow">Dal 2004</p>
+        <h2 id="storia-title" class="parallax-band__heading">La nostra storia</h2>
+        <p class="parallax-band__text">
+          Kilowatt nasce come realtà specializzata nel montaggio e nella gestione tecnica di impianti
+          fotovoltaici industriali. In oltre vent'anni abbiamo affinato processi, standard di sicurezza
+          e competenze B2B, diventando partner di produttori, venditori e aziende finali in Italia ed Europa.
+        </p>
       </div>
     </section>
 
@@ -112,14 +113,17 @@
           <p>Professionisti tecnici e coordinamento operativo per cantieri industriali in Europa.</p>
         </header>
         <figure class="section-media">
-          <img
-            class="section-media__image"
-            src="assets/img/chi-siamo/team-operativo.jpg"
-            alt="Team Kilowatt su tetto con impianto fotovoltaico industriale"
-            width="1400"
-            height="800"
-            loading="lazy"
-          >
+          <picture>
+            <source srcset="assets/img/chi-siamo/team-operativo.webp" type="image/webp">
+            <img
+              class="section-media__image"
+              src="assets/img/chi-siamo/team-operativo.jpg"
+              alt="Il team operativo Kilowatt davanti a un sito industriale"
+              width="1024"
+              height="576"
+              loading="lazy"
+            >
+          </picture>
         </figure>
         <ul class="team__grid">
           <li class="team-card">
