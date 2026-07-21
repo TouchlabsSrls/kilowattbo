@@ -1,0 +1,5 @@
+*
+!.gitignore
+!README-PLESK.md
+!html/
+!html/**
