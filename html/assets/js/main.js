@@ -78,11 +78,50 @@
   if (heroVideo) {
     var heroSection = heroVideo.closest(".hero--cinematic");
     var reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var HERO_OUTRO_SECONDS = 5;
+    var heroOutroActive = false;
+
+    function clearHeroOutro() {
+      heroOutroActive = false;
+      if (heroSection) {
+        heroSection.classList.remove("hero--outro");
+      }
+    }
+
+    function syncHeroOutro() {
+      if (
+        !heroSection ||
+        reducedMotionQuery.matches ||
+        heroSection.classList.contains("hero--static-media") ||
+        heroVideo.paused
+      ) {
+        clearHeroOutro();
+        return;
+      }
+
+      var duration = heroVideo.duration;
+      if (!isFinite(duration) || duration <= HERO_OUTRO_SECONDS + 2) {
+        clearHeroOutro();
+        return;
+      }
+
+      var current = heroVideo.currentTime;
+      var remaining = duration - current;
+      var shouldHide = remaining <= HERO_OUTRO_SECONDS && remaining > 0.08;
+
+      if (shouldHide && !heroOutroActive) {
+        heroOutroActive = true;
+        heroSection.classList.add("hero--outro");
+      } else if (!shouldHide && heroOutroActive) {
+        clearHeroOutro();
+      }
+    }
 
     function useStaticHeroMedia() {
       if (heroSection) {
         heroSection.classList.add("hero--static-media");
       }
+      clearHeroOutro();
       heroVideo.pause();
     }
 
@@ -105,6 +144,15 @@
       useStaticHeroMedia();
     } else {
       heroVideo.addEventListener("error", useStaticHeroMedia);
+      heroVideo.addEventListener("timeupdate", syncHeroOutro);
+      heroVideo.addEventListener("seeked", syncHeroOutro);
+      heroVideo.addEventListener("play", syncHeroOutro);
+      heroVideo.addEventListener("pause", function () {
+        // Keep outro state only while playing through the finale
+        if (heroVideo.currentTime < 1) {
+          clearHeroOutro();
+        }
+      });
       tryPlayHeroVideo();
 
       if ("IntersectionObserver" in window && heroSection) {
@@ -119,6 +167,7 @@
                 tryPlayHeroVideo();
               } else {
                 heroVideo.pause();
+                clearHeroOutro();
               }
             });
           },
@@ -135,6 +184,7 @@
           useStaticHeroMedia();
         } else if (heroSection) {
           heroSection.classList.remove("hero--static-media");
+          clearHeroOutro();
           tryPlayHeroVideo();
         }
       });
