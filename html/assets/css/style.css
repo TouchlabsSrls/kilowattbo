@@ -380,11 +380,13 @@ address {
 .hero--cinematic {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100svh;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
   min-height: 100vh;
-  padding: var(--header-height) 0;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding: 0;
   overflow: hidden;
   color: var(--color-white);
   border-bottom: none;
@@ -474,9 +476,17 @@ address {
 .hero--cinematic .hero__inner {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
   width: min(100% - clamp(3rem, 10vw, 10rem), var(--container-max));
   margin-inline: auto;
+  padding-top: var(--header-height);
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
   padding-inline: clamp(0.5rem, 2vw, 1.5rem);
+  box-sizing: border-box;
+  min-height: 100%;
 }
 
 .hero--cinematic .hero__content {
@@ -776,18 +786,24 @@ address {
 
 @media (max-width: 767px) {
   .hero--cinematic {
-    padding: var(--header-height) 0;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 0;
   }
 
   .hero--cinematic .hero__inner {
     width: min(100% - 2rem, var(--container-max));
+    padding-top: var(--header-height);
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
     padding-inline: 1rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero--cinematic .hero__content {
     max-width: 34rem;
+    width: 100%;
     margin-inline: auto;
     text-align: center;
   }
@@ -798,6 +814,10 @@ address {
 
   .hero--cinematic .hero__actions {
     justify-content: center;
+  }
+
+  .hero--cinematic .hero__scroll-hint {
+    display: none;
   }
 
   .hero__metrics {
@@ -820,16 +840,19 @@ address {
 @media (max-width: 767px) and (orientation: landscape),
 (orientation: landscape) and (max-height: 820px) {
   .hero--cinematic {
-    min-height: 100svh;
     min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    padding: var(--header-height) 0;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 0;
   }
 
   .hero--cinematic .hero__inner {
     width: min(100% - 2.5rem, 58rem);
+    padding-top: var(--header-height);
+    padding-bottom: 0.75rem;
     padding-inline: 0.75rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero--cinematic .hero__content {
@@ -852,14 +875,14 @@ address {
   .hero--cinematic h1 {
     grid-column: 1;
     grid-row: 2;
-    font-size: clamp(1.35rem, 3.2vw, 2rem);
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-bottom: 0.4rem;
   }
 
   .hero--cinematic .hero__subtitle {
     grid-column: 1;
     grid-row: 3;
-    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-size: clamp(0.8125rem, 1.8vw, 0.95rem);
     margin-bottom: 0;
     max-width: none;
   }
@@ -875,6 +898,7 @@ address {
 
   .hero--cinematic .hero__actions .btn {
     white-space: normal;
+    padding: 0.65rem 1rem;
   }
 
   .hero__metrics {
@@ -888,7 +912,7 @@ address {
   }
 
   .hero__metric {
-    padding: 0.65rem 0.75rem;
+    padding: 0.55rem 0.65rem;
   }
 
   .hero__scroll-hint {
@@ -897,8 +921,8 @@ address {
 }
 
 @media (max-width: 380px) {
-  .hero--cinematic {
-    padding: var(--header-height) 0;
+  .hero--cinematic .hero__inner {
+    padding-top: var(--header-height);
   }
 
   .hero__metrics {
@@ -1459,6 +1483,7 @@ address {
 
   .hero--cinematic .hero__inner {
     width: min(100% - clamp(4rem, 12vw, 12rem), var(--container-max));
+    justify-content: flex-start;
   }
 
   .hero--cinematic .hero__metrics {
@@ -1481,13 +1506,17 @@ address {
 
 @media (min-width: 768px) and (orientation: landscape) and (max-height: 820px) {
   .hero--cinematic {
-    align-items: center;
-    justify-content: center;
-    padding: var(--header-height) 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 0;
   }
 
   .hero--cinematic .hero__inner {
     width: min(100% - 3rem, 58rem);
+    padding-top: var(--header-height);
+    align-items: center;
+    justify-content: center;
   }
 
   .hero--cinematic .hero__content {
