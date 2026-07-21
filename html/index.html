@@ -149,16 +149,30 @@
       </div>
     </div>
 
-    <section class="section section--alt section--reveal" aria-labelledby="mission-title">
-      <div class="container">
-        <div class="mission-block">
-          <h2 id="mission-title">La nostra missione</h2>
+    <section class="mission-split section--reveal" aria-labelledby="mission-title">
+      <div class="container mission-split__inner">
+        <div class="mission-split__content">
+          <p class="mission-split__eyebrow">La nostra missione</p>
+          <h2 id="mission-title">Energia industriale, eseguita con precisione</h2>
           <p>
-            Accompagnare le aziende nella transizione energetica offrendo un servizio di installazione
-            e manutenzione fotovoltaica d'eccellenza, basato su precisione, sicurezza e massima resa
+            Accompagniamo le aziende nella transizione energetica con installazione e manutenzione
+            fotovoltaica d'eccellenza: precisione tecnica, sicurezza in cantiere e massima resa
             degli impianti nel tempo.
           </p>
+          <ul class="mission-split__points">
+            <li>Coperture industriali e siti produttivi</li>
+            <li>Team operativo in Italia, Spagna e Svizzera</li>
+            <li>Processi documentati dall'installazione al collaudo</li>
+          </ul>
         </div>
+        <figure class="mission-split__visual">
+          <div class="mission-split__frame" data-parallax="0.14">
+            <picture>
+              <source srcset="assets/img/home/campo-fotovoltaico.webp" type="image/webp">
+              <img src="assets/img/home/campo-fotovoltaico.jpg" alt="Impianto fotovoltaico industriale visto dall'alto" width="1920" height="1080" loading="lazy">
+            </picture>
+          </div>
+        </figure>
       </div>
     </section>
 
@@ -197,6 +211,29 @@
             <h3>Affidabilità</h3>
             <p>Procedure di cantiere rigorose e continuità operativa in Italia, Spagna e Svizzera.</p>
           </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="parallax-band" aria-label="Impianti fotovoltaici su larga scala">
+      <div
+        class="parallax-band__media"
+        data-parallax-bg="0.4"
+        style="background-image: url('assets/img/home/cantiere-agricolo.jpg')"
+        role="img"
+        aria-label="Cantiere fotovoltaico industriale in campagna"
+      ></div>
+      <div class="parallax-band__scrim" aria-hidden="true"></div>
+      <div class="container parallax-band__content section--reveal">
+        <p class="parallax-band__eyebrow">Dal cantiere alla messa in esercizio</p>
+        <blockquote class="parallax-band__quote">
+          Progettiamo, installiamo e gestiamo impianti industriali con la stessa cura
+          su ogni fila di moduli — dalla grande area a terra al tetto produttivo.
+        </blockquote>
+        <ul class="parallax-band__stats" aria-label="Numeri operativi">
+          <li><strong>22+</strong><span>Anni di esperienza</span></li>
+          <li><strong>3</strong><span>Paesi operativi</span></li>
+          <li><strong>5</strong><span>Servizi integrati</span></li>
         </ul>
       </div>
     </section>
@@ -253,6 +290,35 @@
       </div>
     </section>
 
+    <section class="aerial-band" aria-labelledby="showcase-title">
+      <div
+        class="aerial-band__media"
+        data-parallax-bg="0.75"
+        style="background-image: url('assets/img/home/capannone-industriale.jpg')"
+        role="img"
+        aria-label="Impianto fotovoltaico su capannone industriale"
+      ></div>
+      <div
+        class="aerial-band__layer"
+        data-parallax-bg="0.45"
+        style="background-image: url('assets/img/home/impianto-aereo.jpg')"
+        aria-hidden="true"
+      ></div>
+      <div class="aerial-band__scrim" aria-hidden="true"></div>
+      <div class="container aerial-band__content section--reveal">
+        <p class="aerial-band__eyebrow">Vista dall'alto</p>
+        <h2 id="showcase-title">Impianti industriali, visti dall'alto</h2>
+        <p>
+          Installazioni su capannoni, aree produttive e siti logistici in tutta Europa.
+        </p>
+        <ul class="aerial-band__tags">
+          <li>Coperture industriali</li>
+          <li>Aree a terra</li>
+          <li>Parchi logistici</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section audience" aria-labelledby="audience-title">
       <div class="container">
         <header class="section__header section__header--center">
@@ -294,7 +360,7 @@
             <article class="portfolio-card">
               <img
                 class="portfolio-card__image"
-                src="assets/img/portfolio/impianto-industriale-italia.jpg"
+                src="assets/img/home/capannone-industriale.jpg"
                 alt="Impianto fotovoltaico industriale su capannone in Emilia-Romagna"
                 width="800"
                 height="450"
@@ -316,7 +382,7 @@
             <article class="portfolio-card">
               <img
                 class="portfolio-card__image"
-                src="assets/img/servizi/revamping-repowering.jpg"
+                src="assets/img/home/impianto-aereo.jpg"
                 alt="Revamping fotovoltaico su grande impianto industriale"
                 width="800"
                 height="450"
@@ -338,7 +404,7 @@
             <article class="portfolio-card">
               <img
                 class="portfolio-card__image"
-                src="assets/img/portfolio/manutenzione-impianto.jpg"
+                src="assets/img/home/parco-logistico.jpg"
                 alt="Manutenzione e pulizia pannelli su impianto fotovoltaico aziendale"
                 width="800"
                 height="450"
@@ -360,11 +426,19 @@
       </div>
     </section>
 
-    <section class="cta-banner" aria-labelledby="cta-title">
-      <div class="container cta-banner__inner">
+    <section class="parallax-band parallax-band--cta" aria-labelledby="cta-title">
+      <div
+        class="parallax-band__media"
+        data-parallax-bg="0.35"
+        style="background-image: url('assets/img/home/campo-fotovoltaico.jpg')"
+        role="img"
+        aria-hidden="true"
+      ></div>
+      <div class="parallax-band__scrim parallax-band__scrim--cta" aria-hidden="true"></div>
+      <div class="container parallax-band__content parallax-band__content--cta section--reveal">
         <h2 id="cta-title">Cerchi un partner tecnico affidabile per il fotovoltaico industriale?</h2>
         <p>Contattaci per un preventivo gratuito o per valutare una partnership commerciale.</p>
-        <div class="cta-banner__actions">
+        <div class="parallax-band__actions">
           <a href="contatti.html#preventivo" class="btn btn--primary btn--light">Richiedi preventivo</a>
           <a href="contatti.html#partner" class="btn btn--secondary btn--light">Diventa partner</a>
         </div>

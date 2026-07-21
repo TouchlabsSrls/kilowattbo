@@ -2006,3 +2006,327 @@ address {
     height: 20rem;
   }
 }
+
+/* ==========================================================================
+   Home — mission split, parallax, showcase
+   ========================================================================== */
+
+.mission-split {
+  padding: 7.5rem 0 5.5rem;
+  background: var(--color-white);
+}
+
+.mission-split__inner {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.mission-split__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-green-600);
+}
+
+.mission-split__content h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.mission-split__content > p {
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+  margin-bottom: 1.5rem;
+  max-width: 34rem;
+}
+
+.mission-split__points {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.mission-split__points li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-weight: 500;
+  color: var(--color-blue-900);
+}
+
+.mission-split__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--color-green-500);
+}
+
+.mission-split__visual {
+  margin: 0;
+}
+
+.mission-split__frame {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.mission-split__frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.parallax-band {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(22rem, 55vh, 32rem);
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.parallax-band--cta {
+  min-height: clamp(20rem, 48vh, 28rem);
+}
+
+.parallax-band__media {
+  position: absolute;
+  inset: -18% 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1.12);
+}
+
+.parallax-band__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(12, 31, 61, 0.88) 0%, rgba(12, 31, 61, 0.55) 50%, rgba(12, 31, 61, 0.72) 100%),
+    linear-gradient(0deg, rgba(12, 31, 61, 0.45) 0%, transparent 40%);
+}
+
+.parallax-band__scrim--cta {
+  background:
+    linear-gradient(135deg, rgba(12, 31, 61, 0.9) 0%, rgba(12, 31, 61, 0.65) 55%, rgba(26, 58, 107, 0.75) 100%);
+}
+
+.parallax-band__content {
+  position: relative;
+  z-index: 1;
+  max-width: 40rem;
+  padding: 4.5rem 0;
+}
+
+.parallax-band__content--cta {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.parallax-band__eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-green-400);
+}
+
+.parallax-band__quote {
+  margin: 0 0 2rem;
+  font-size: clamp(1.35rem, 3vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.parallax-band__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+}
+
+.parallax-band__stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.parallax-band__stats strong {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+.parallax-band__stats span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.parallax-band__content--cta h2 {
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.parallax-band__content--cta p {
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 1.75rem;
+}
+
+.parallax-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.aerial-band {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(22rem, 58vh, 34rem);
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.aerial-band__media,
+.aerial-band__layer {
+  position: absolute;
+  inset: -45% 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1.25);
+}
+
+.aerial-band__media {
+  z-index: 0;
+}
+
+.aerial-band__layer {
+  z-index: 1;
+  left: 48%;
+  right: -8%;
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.92;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aerial-band__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(105deg, rgba(12, 31, 61, 0.88) 0%, rgba(12, 31, 61, 0.62) 42%, rgba(12, 31, 61, 0.35) 72%, rgba(12, 31, 61, 0.55) 100%),
+    linear-gradient(0deg, rgba(12, 31, 61, 0.45) 0%, transparent 45%);
+}
+
+.aerial-band__content {
+  position: relative;
+  z-index: 3;
+  max-width: 38rem;
+  padding: 4rem 0;
+}
+
+.aerial-band__eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-green-400);
+}
+
+.aerial-band__content h2 {
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.aerial-band__content > p {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 1.5rem;
+  max-width: 30rem;
+}
+
+.aerial-band__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.aerial-band__tags li {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.page-home .portfolio-preview .portfolio-card__image {
+  height: 13rem;
+}
+
+@media (min-width: 768px) {
+  .mission-split__inner {
+    grid-template-columns: 1fr 1.05fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .aerial-band__layer {
+    display: none;
+  }
+
+  .aerial-band__content {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .aerial-band__content > p {
+    margin-inline: auto;
+  }
+
+  .aerial-band__tags {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-split__frame img,
+  .parallax-band__media,
+  .aerial-band__media,
+  .aerial-band__layer {
+    transform: none !important;
+    will-change: auto;
+  }
+}
